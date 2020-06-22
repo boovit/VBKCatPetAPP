@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喵 宠" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pr-9y-JSc">
+                                <rect key="frame" x="172.33333333333334" y="348" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GfY-ck-dUj"/>
+                                    <constraint firstAttribute="width" constant="70" id="fB9-mi-v2q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.98039215686274506" green="0.68627450980392157" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyright © yaohr.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p4-pX-9mc">
+                                <rect key="frame" x="139.66666666666666" y="712" width="134.99999999999997" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="FN1-er-Jwb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.52658126751581824" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="5w2-OE-w47" userLabel="logo">
+                                <rect key="frame" x="147" y="228" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="5VM-lm-w6S"/>
+                                    <constraint firstAttribute="width" constant="120" id="aNc-3Z-RHk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company_logo_h.png" translatesAutoresizingMaskIntoConstraints="NO" id="q0d-I0-6yT">
+                                <rect key="frame" x="157" y="672" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nGW-4C-SzN"/>
+                                    <constraint firstAttribute="width" constant="100" id="tvD-EF-iBa"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="q0d-I0-6yT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BVm-aj-R0u"/>
+                            <constraint firstItem="5w2-OE-w47" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-80" id="SwG-gy-LcT"/>
+                            <constraint firstItem="1p4-pX-9mc" firstAttribute="top" secondItem="q0d-I0-6yT" secondAttribute="bottom" id="YAx-jp-YkK"/>
+                            <constraint firstItem="7Pr-9y-JSc" firstAttribute="top" secondItem="5w2-OE-w47" secondAttribute="bottom" id="a1l-9D-77j"/>
+                            <constraint firstItem="1p4-pX-9mc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="paS-Ok-wdY"/>
+                            <constraint firstItem="7Pr-9y-JSc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vbP-gp-Hnj"/>
+                            <constraint firstItem="5w2-OE-w47" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ygx-Kp-m5h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1p4-pX-9mc" secondAttribute="bottom" constant="10" id="z1q-va-6Ey"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="company_logo_h.png" width="200" height="200"/>
+        <image name="icon" width="60" height="60"/>
+    </resources>
+</document>
