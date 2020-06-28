@@ -16,7 +16,19 @@
 
 NSString * const kYHNetWorkToolsNotification_NetError_Login = @"kYHNetWorkToolsNotification_NetError_Login";
 
+@interface YHNetWorkTools ()
+@property(nonatomic,strong)AFHTTPSessionManager *manager;
+@end
+
 @implementation YHNetWorkTools
+- (AFURLSessionManager *)manager
+{
+    if (_manager==nil) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
+
 +(instancetype)shareInstance
 {
     static YHNetWorkTools *instance;
@@ -33,7 +45,7 @@ NSString * const kYHNetWorkToolsNotification_NetError_Login = @"kYHNetWorkToolsN
              errorBlock:(void(^)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error))errorBlock
 {
     [self debugLog:url];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *manager = [[self shareInstance] manager];
     
     [manager GET:url parameters:[YHNetWorkTools appendUrlParameterExt:paramDic] progress:^(NSProgress * _Nonnull downloadProgress) {
         
@@ -57,7 +69,7 @@ NSString * const kYHNetWorkToolsNotification_NetError_Login = @"kYHNetWorkToolsN
     NSDictionary *urldic = [YHNetWorkTools appendUrlParameterExt:nil];
     url = [url stringByAppendedURLParams:urldic keyList:[urldic allKeys]];
     [self debugLog:url];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *manager = [[self shareInstance] manager];
     
     [manager POST:url parameters:[YHNetWorkTools appendBodyParameterExt:paramDic] progress:^(NSProgress * _Nonnull uploadProgress) {
         
@@ -78,7 +90,7 @@ NSString * const kYHNetWorkToolsNotification_NetError_Login = @"kYHNetWorkToolsN
     NSDictionary *urldic = [YHNetWorkTools appendUrlParameterExt:nil];
     url = [url stringByAppendedURLParams:urldic keyList:[urldic allKeys]];
     [self debugLog:url];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *manager = [[self shareInstance] manager];
     
     [manager POST:url parameters:[YHNetWorkTools appendBodyParameterExt:paramDic] progress:^(NSProgress * _Nonnull uploadProgress) {
         
@@ -105,7 +117,7 @@ NSString * const kYHNetWorkToolsNotification_NetError_Login = @"kYHNetWorkToolsN
     NSDictionary *urldic = [YHNetWorkTools appendUrlParameterExt:nil];
     url = [url stringByAppendedURLParams:urldic keyList:[urldic allKeys]];
     [self debugLog:url];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *manager = [[self shareInstance] manager];
     [manager POST:url parameters:[YHNetWorkTools appendBodyParameterExt:paramDic] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSString *fileType = @"";
         if ([type isEqualToString:YH_UPLOAD_FILE_TYPE_PNG]) {
@@ -139,7 +151,7 @@ NSString * const kYHNetWorkToolsNotification_NetError_Login = @"kYHNetWorkToolsN
     NSDictionary *urldic = [YHNetWorkTools appendUrlParameterExt:nil];
     url = [url stringByAppendedURLParams:urldic keyList:[urldic allKeys]];
     [self debugLog:url];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *manager = [[self shareInstance] manager];
     [manager POST:url parameters:[YHNetWorkTools appendBodyParameterExt:paramDic] constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         for (YHNetWorkToolsFileModel *file in files) {
             if ([file isKindOfClass:[YHNetWorkToolsFileModel class]]) {

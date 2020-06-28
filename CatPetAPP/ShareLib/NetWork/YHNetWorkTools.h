@@ -18,7 +18,7 @@ extern NSString * const kYHNetWorkToolsNotification_NetError_Login;
 @property(nonatomic,strong)NSData *data;
 @end
 
-@interface YHNetWorkTools : AFHTTPSessionManager
+@interface YHNetWorkTools : NSObject
 +(instancetype)shareInstance;
 
 +(void)netRequestGetHost:(NSString*)host path:(NSString*)path param:(NSDictionary*)paramDic completeBlock:(void(^)(NSURLSessionDataTask * task, id  responseObject))completeBlock errorBlock:(void(^)(NSURLSessionDataTask * task, NSError * error))errorBlock;
