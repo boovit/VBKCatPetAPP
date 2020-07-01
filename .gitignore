@@ -1,0 +1,5 @@
+#ignore these files
+
+Pods/*
+CatPetAPP.xcodeproj/xcuserdata/*
+CatPetAPP.xcworkspace/*
